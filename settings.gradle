@@ -1,2 +1,2 @@
 include ':app'
-rootProject.name = "plugin"
+rootProject.name = "plugin_simple_1"
