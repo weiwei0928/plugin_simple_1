@@ -1,0 +1,61 @@
+//plugins {
+//    id 'com.android.application'
+//    id 'kotlin-android'
+//    id 'kotlin-android-extensions'
+//}
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+
+
+android {
+    compileSdkVersion 30
+    buildToolsVersion "30.0.3"
+
+    defaultConfig {
+        applicationId "com.zhangyue.plugin"
+        minSdkVersion 16
+        targetSdkVersion 30
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    //start-----插件相关-------------------
+//    aaptOptions.additionalParameters '--PLUG-resoure-proguard', '--PLUG-resoure-id', '0x7d'
+    aaptOptions {
+        additionalParameters '--allow-reserved-package-id', '--package-id', '0x76'
+    }
+    //end-------插件相关-------------------
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+dependencies {
+    compileOnly "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    compileOnly 'androidx.core:core-ktx:1.2.0'
+    compileOnly 'androidx.appcompat:appcompat:1.1.0'
+    implementation 'com.google.android.material:material:1.1.0'
+    compileOnly 'androidx.constraintlayout:constraintlayout:1.1.3'
+    testImplementation 'junit:junit:4.+'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+//    implementation files('sdk-jars/plugin_sdk.jar')
+
+    //start-----插件相关-------------------
+    compileOnly fileTree(include: ['*.jar'], dir: 'sdk-jars')
+    //end-------插件相关-------------------
+}
