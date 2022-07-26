@@ -20,7 +20,7 @@ class MainActivity : ZeusBaseActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         Log.d(TAG, "onCreate: ")
-        //        String version = "1";
+        //val version = "1";
         val version = "版本2"
 
         title = "插件,版本为$version"

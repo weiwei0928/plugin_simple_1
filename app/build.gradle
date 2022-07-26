@@ -1,13 +1,19 @@
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+    id 'kotlin-android-extensions'
+    id 'com.ww.gradle.stand'
+}
+//apply plugin: 'com.android.application'
+//apply plugin: 'kotlin-android'
+//apply plugin: 'kotlin-android-extensions'
+//apply plugin: 'com.ww.gradle.stand'
 //plugins {
 //    id 'com.android.application'
-//    id 'kotlin-android'
-//    id 'kotlin-android-extensions'
+//    id 'org.jetbrains.kotlin.android'
+//    //方式3,独立项目中
+//    id 'com.ww.gradle.stand'
 //}
-apply plugin: 'com.android.application'
-apply plugin: 'kotlin-android'
-apply plugin: 'kotlin-android-extensions'
-
-
 android {
     compileSdkVersion 30
     buildToolsVersion "30.0.3"
@@ -53,9 +59,9 @@ dependencies {
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
-//    implementation files('sdk-jars/plugin_sdk.jar')
+//    implementation files('libs/plugin_sdk.jar')
 
     //start-----插件相关-------------------
-    compileOnly fileTree(include: ['*.jar'], dir: 'sdk-jars')
+    compileOnly fileTree(include: ['*.jar'], dir: 'libs')
     //end-------插件相关-------------------
 }
