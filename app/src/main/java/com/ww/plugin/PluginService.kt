@@ -5,7 +5,7 @@ import android.content.Intent
 import android.os.IBinder
 import android.util.Log
 
-class MyService : Service() {
+class PluginService : Service() {
 
     companion object {
         private const val TAG = "MyService"

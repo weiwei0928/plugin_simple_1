@@ -17,8 +17,23 @@
         android:textColor="@android:color/black" />
 
     <Button
-        android:text="启动service"
-        android:id="@+id/btn"
+        android:id="@+id/test_service"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:text="测试service" />
+
+    <Button
+        android:layout_below="@id/test_service"
+        android:id="@+id/test_broadcastReceiver"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="测试广播" />
+    <Button
+        android:layout_below="@id/test_broadcastReceiver"
+        android:id="@+id/test_contentProvider"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="测试contentProvider" />
+
+
 </RelativeLayout>

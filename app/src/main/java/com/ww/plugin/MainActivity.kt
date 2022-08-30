@@ -31,8 +31,8 @@ class MainActivity : ZeusBaseActivity() {
             var intent = Intent(MainActivity@ this, TestPluginActivity::class.java)
             startActivity(intent)
         }
-        btn.setOnClickListener {
-            val startIntent = Intent(this, MyService::class.java)
+        test_service.setOnClickListener {
+            val startIntent = Intent(this, PluginService::class.java)
             //启动服务
             PluginManager.startService(startIntent)
         }
