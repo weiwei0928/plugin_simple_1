@@ -1,8 +1,1 @@
-{
-    "name": "zeusplugin_asset",
-    "minVersion": "1",
-    "version": "2",
-    "mainClass": "com.ww.plugin.MainActivity",
-    "otherInfo": "",
-    "flag": ""
-}
+{"mainClass":"com.ww.plugin.MainActivity","innerPlugin":true,"name":"plugin_sample_1","version":"1"}

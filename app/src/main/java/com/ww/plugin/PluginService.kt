@@ -25,4 +25,8 @@ class PluginService : Service() {
         return super.onStartCommand(intent, flags, startId)
     }
 
+    override fun onUnbind(intent: Intent?): Boolean {
+        return super.onUnbind(intent)
+    }
+
 }

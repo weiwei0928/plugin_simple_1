@@ -64,12 +64,7 @@ task writePluginMeta(dependsOn: ['makePluginMeta']) {
         println("dofirst")
     }
 }
-project.afterEvaluate {
-//    Task generateDebugAssets = getProject().tasks.generateDebugAssets
-//    Task generateReleaseAssets = getProject().tasks.generateReleaseAssets
-//    generateDebugAssets.dependsOn(makePluginMetaTask)
-//    generateReleaseAssets.dependsOn(makePluginMetaTask)
-}
+
 def makePluginMetaTask = task("makePluginMeta") {
     doLast {
         File file = getProject().file("src/main/assets/plugin.meta")
@@ -79,22 +74,27 @@ def makePluginMetaTask = task("makePluginMeta") {
         }
     }
 }
-
+project.afterEvaluate {
+    Task generateDebugAssets = getProject().tasks.generateDebugAssets
+    Task generateReleaseAssets = getProject().tasks.generateReleaseAssets
+    generateDebugAssets.dependsOn(makePluginMetaTask)
+    generateReleaseAssets.dependsOn(makePluginMetaTask)
+}
 def buildPluginMeta() {
     JSONObject
     def jsonObject = new JSONObject()
     println(project.ext.version)
     jsonObject.put("version", project.ext.version)
     jsonObject.put("name", project.ext.name)
-    jsonObject.put("mainclass", project.ext.mainClass)
+    jsonObject.put("mainClass", project.ext.mainClass)
     jsonObject.put("innerPlugin", project.ext.innerPlugin)
     print(jsonObject.toString())
     return jsonObject.toString()
 }
 
 ext {
-    version = "2.0"
-    name = "plugin_main"
-    mainClass = "com.ww.plugin.mine.MainActivity"
-    innerPlugin = false
+    version = "1"
+    name = "plugin_sample_1"
+    mainClass = "com.ww.plugin.MainActivity"
+    innerPlugin = true
 }

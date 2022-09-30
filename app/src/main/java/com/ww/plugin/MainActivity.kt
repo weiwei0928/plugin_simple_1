@@ -20,12 +20,12 @@ class MainActivity : ZeusBaseActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         Log.d(TAG, "onCreate: ")
-        //val version = "1";
-        val version = "版本2"
+        val version = "版本1";
+//        val version = "版本2"
 
-        title = "插件,版本为$version"
+        title = "插件,版本为 :$version"
 
-        main_tv.text = "这是插件,版本为$version"
+        main_tv.text = "这是插件,版本为 ：$version"
 
         main_tv.setOnClickListener {
             var intent = Intent(MainActivity@ this, TestPluginActivity::class.java)
