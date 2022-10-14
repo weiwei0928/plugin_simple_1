@@ -1,31 +1,28 @@
 package com.ww.plugin
 
-import android.annotation.SuppressLint
+import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import kotlinx.android.synthetic.main.activity_main.*
-import zeus.plugin.PluginManager
-import zeus.plugin.ZeusBaseActivity
 
 
-class MainActivity : ZeusBaseActivity() {
+class MainActivity : Activity() {
 
     companion object {
         private const val TAG = "MainActivity"
     }
 
-    @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         Log.d(TAG, "onCreate: ")
-        val version = "版本1";
+        val version = "版本1.0.1";
 //        val version = "版本2"
 
-        title = "插件,版本为 :$version"
+        title = "插件1,版本为 :$version"
 
-        main_tv.text = "这是插件,版本为 ：$version"
+        main_tv.text = "这是插件1,版本为 ：$version"
 
         main_tv.setOnClickListener {
             var intent = Intent(MainActivity@ this, TestPluginActivity::class.java)
@@ -34,7 +31,7 @@ class MainActivity : ZeusBaseActivity() {
         test_service.setOnClickListener {
             val startIntent = Intent(this, PluginService::class.java)
             //启动服务
-            PluginManager.startService(startIntent)
+            startService(startIntent)
         }
     }
 

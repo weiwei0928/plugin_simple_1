@@ -2,11 +2,11 @@ package com.ww.plugin
 
 import android.os.Bundle
 import android.util.Log
+import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_test_plugin.*
-import zeus.plugin.ZeusBaseActivity
 
 
-class TestPluginActivity : ZeusBaseActivity() {
+class TestPluginActivity : AppCompatActivity() {
 
     companion object {
         private const val TAG = "TestPluginActivity"
