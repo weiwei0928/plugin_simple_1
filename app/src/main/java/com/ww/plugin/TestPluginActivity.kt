@@ -18,7 +18,7 @@ class TestPluginActivity : AppCompatActivity() {
         setContentView(R.layout.activity_test_plugin)
         Log.d(TAG, "onCreate: ")
 
-        tv.text = "哈哈哈哈"
+        tv.text = "呵呵呵呵"
 
     }
 

@@ -56,5 +56,10 @@
       <option name="name" value="maven5" />
       <option name="url" value="file:$PROJECT_DIR$/../GradlePlugin/repo/" />
     </remote-repository>
+    <remote-repository>
+      <option name="id" value="maven6" />
+      <option name="name" value="maven6" />
+      <option name="url" value="file:$USER_HOME$/AndroidStudioProjects/EasyPlugin/EasyPlugin/repos/snapshots/" />
+    </remote-repository>
   </component>
 </project>

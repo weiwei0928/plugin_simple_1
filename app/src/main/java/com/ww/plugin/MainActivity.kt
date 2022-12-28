@@ -16,9 +16,9 @@ class MainActivity : Activity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        Log.d(TAG, "onCreate: ")
-        val version = "版本1.0.1";
-//        val version = "版本2"
+        Log.d(TAG, "onCreate: 版本2")
+//        val version = "版本1";
+        val version = "版本2"
 
         title = "插件1,版本为 :$version"
 

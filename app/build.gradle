@@ -4,10 +4,11 @@ plugins {
     id 'com.android.application'
     id 'kotlin-android'
     id 'kotlin-android-extensions'
-    id 'com.ww.easy.plugin'
+    id 'com.ww.easy.writePluginMetaPlugin'
+    id 'com.ww.easy.activityTransformPlugin'
 }
 pluginMeta {
-    version = "1.0.1"
+    version = "2"
     name = "plugin_sample_1"
     mainClass = "com.ww.plugin.MainActivity"
     innerPlugin = false
